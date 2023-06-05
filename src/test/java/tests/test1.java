@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.LoginPage;
+import pages.ProductsPage;
 
 public class test1 extends BaseTest {
 
@@ -18,24 +20,25 @@ public class test1 extends BaseTest {
 
     @Test
     public void invalidLoginTest(){
+        LoginPage.action().
+                enterUsername("fodase").
+                enterPassword("fodase").
+                clickLoginButton();
 
-        getDriver().findElement(usernameTxtField).sendKeys("SACOSUADO");
-        getDriver().findElement(passwordTxtField).sendKeys("SEXO");
-        getDriver().findElement(loginButton).click();
 
-
-        Assert.assertEquals(getDriver().findElement(errorMessage).getText(),"Username and password do not match any user in this service.");
+        Assert.assertEquals(LoginPage.action().getErrorText(),"Username and password do not match any user in this service.");
 
     }
 
     @Test
     public void invalidPasswordTest(){
 
-        getDriver().findElement(usernameTxtField).sendKeys("standard_user");
-        getDriver().findElement(passwordTxtField).sendKeys("SEXO");
-        getDriver().findElement(loginButton).click();
+        LoginPage.action().
+                enterUsername("standard_user").
+                enterPassword("fodase").
+                clickLoginButton();
 
-        Assert.assertEquals(getDriver().findElement(errorMessage).getText(),"Username and password do not match any user in this service.");
+        Assert.assertEquals(LoginPage.action().getErrorText(),"Username and password do not match any user in this service.");
 
 
 
@@ -44,13 +47,12 @@ public class test1 extends BaseTest {
 
     @Test
     public void successfulLoginTest(){
-        getDriver().findElement(usernameTxtField).sendKeys("standard_user");
-        getDriver().findElement(passwordTxtField).sendKeys("secret_sauce");
-        getDriver().findElement(loginButton).click();
+        LoginPage.action().
+                enterUsername("standard_user").
+                enterPassword("secret_sauce").
+                clickLoginButton();
 
-        WebElement productTitle = getDriver().findElement(AppiumBy.xpath("//android.view.ViewGroup[@content-desc=\"test-Cart drop zone\"]/android.view.ViewGroup/android.widget.TextView"));
-
-        Assert.assertEquals(productTitle.getText(),"PRODUCTS");
+        Assert.assertEquals(ProductsPage.action().getTitle(),"PRODUCTS");
 
 
     }
