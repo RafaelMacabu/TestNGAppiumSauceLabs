@@ -1,21 +1,12 @@
 package tests;
 
-import base.BaseTest;
-import io.appium.java_client.AppiumBy;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
+import base.BasePage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.LoginPage;
 import pages.ProductsPage;
 
-public class test1 extends BaseTest {
-
-    By errorMessage = AppiumBy.xpath("//android.view.ViewGroup[@content-desc=\"test-Error message\"]/android.widget.TextView");
-    By usernameTxtField = AppiumBy.accessibilityId("test-Username");
-    By passwordTxtField = AppiumBy.accessibilityId("test-Password");
-    By loginButton = AppiumBy.accessibilityId("test-LOGIN");
+public class test1 extends BasePage {
 
 
     @Test

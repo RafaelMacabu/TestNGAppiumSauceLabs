@@ -1,6 +1,7 @@
 package base;
 
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.InteractsWithApps;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
@@ -10,22 +11,26 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.*;
+import pages.ProductsPage;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
 import java.util.HashMap;
 import java.util.Properties;
 
-public class BaseTest {
+public class BasePage {
     static protected AppiumDriver driver;
     protected Properties prop;
     protected InputStream inputStream;
 
-    public BaseTest(){
+    public BasePage(){
         PageFactory.initElements(new AppiumFieldDecorator(getDriver()),this);
+    }
+
+    public String getProps(String property) {
+        return prop.getProperty(property);
     }
 
 
@@ -35,7 +40,7 @@ public class BaseTest {
     }
 
     public static void setDriver(AppiumDriver driver) {
-        BaseTest.driver = driver;
+        BasePage.driver = driver;
     }
 
     @Parameters({"platformName","udid"})
@@ -52,6 +57,7 @@ public class BaseTest {
         //caps.put(MobileCapabilityType.APP,"D:\\Software Estudos APPIUM\\apps\\Android.SauceLabs.Mobile.Sample.app.2.7.1.apk");
         caps.put("appPackage",prop.getProperty("androidAppPackage"));
         caps.put("appActivity",prop.getProperty("androidAppActivity"));
+        caps.put("adbExecTimeout","6000000");
         UiAutomator2Options options = new UiAutomator2Options(caps);
 
         URL url = new URL(prop.getProperty("appiumURL"));
@@ -80,8 +86,13 @@ public class BaseTest {
         return e.getText();
     }
 
+    public void closeApp(){
+        ((InteractsWithApps) getDriver()).terminateApp(prop.getProperty("androidAppPackage"));
+    }
+
     @AfterMethod
     public void afterMethod(){
+        closeApp();
         driver.quit();
     }
 
