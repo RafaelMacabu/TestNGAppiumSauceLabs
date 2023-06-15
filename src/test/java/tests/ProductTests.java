@@ -17,7 +17,7 @@ public class ProductTests extends BasePage {
                 login("standard_user","secret_sauce");
 
         softAssert.assertEquals(productsPage.getSLBTitle(),"Sauce Labs Backpack");
-        softAssert.assertEquals(productsPage.getSLBPrice(),"$29.99");
+        softAssert.assertEquals(productsPage.getSLBPrice(),"$29.995");
 
         softAssert.assertAll();
 
@@ -36,6 +36,11 @@ public class ProductTests extends BasePage {
 
         softAssert.assertEquals(detailsPage.getSLBCartTitle(),"Sauce Labs Backpack");
         softAssert.assertEquals(detailsPage.getSLBCartDescription(),"carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.");
+
+        detailsPage.
+                scrollToPrice();
+
+        softAssert.assertEquals(detailsPage.getSLBPrice(),"$29.99");
 
         softAssert.assertAll();
 

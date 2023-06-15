@@ -1,5 +1,6 @@
 package base;
 
+import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.InteractsWithApps;
 import io.appium.java_client.android.AndroidDriver;
@@ -12,6 +13,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.*;
 import pages.ProductsPage;
+import utils.TestUtils;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -24,6 +26,7 @@ public class BasePage {
     static protected AppiumDriver driver;
     protected Properties prop;
     protected InputStream inputStream;
+    protected static String dateTime;
 
     public BasePage(){
         PageFactory.initElements(new AppiumFieldDecorator(getDriver()),this);
@@ -43,9 +46,14 @@ public class BasePage {
         BasePage.driver = driver;
     }
 
+    public static String getDatetime(){
+        return dateTime;
+    }
+
     @Parameters({"platformName","udid"})
     @BeforeMethod
     public void beforeMethod(String platformName,String udid) throws IOException {
+        dateTime = TestUtils.getDateTime();
         prop = new Properties();
         String propFileName = "config.properties";
         inputStream = getClass().getClassLoader().getResourceAsStream(propFileName);
@@ -88,6 +96,12 @@ public class BasePage {
 
     public void closeApp(){
         ((InteractsWithApps) getDriver()).terminateApp(prop.getProperty("androidAppPackage"));
+    }
+
+    public WebElement scrollToElement(){
+        return driver.findElement(AppiumBy.androidUIAutomator(
+                "new UiScrollable(new UiSelector()" + ".description(\"test-Inventory item page\")).scrollIntoView(" + "new UiSelector().description(\"test-Price\"));"));
+
     }
 
     @AfterMethod

@@ -12,6 +12,8 @@ public class ProductsDetailsPage extends BasePage {
     private WebElement cartBackpackDescription;
     @AndroidFindBy(accessibility = "test-BACK TO PRODUCTS")
     private WebElement backToProductsButton;
+    @AndroidFindBy(accessibility = "test-Price")
+    private WebElement SLBPrice;
 
     public static ProductsDetailsPage action(){
         return new ProductsDetailsPage();
@@ -23,6 +25,15 @@ public class ProductsDetailsPage extends BasePage {
 
     public String getSLBCartDescription(){
         return getText(cartBackpackDescription);
+    }
+
+    public String getSLBPrice(){
+        return getText(SLBPrice);
+    }
+
+    public ProductsDetailsPage scrollToPrice(){
+        scrollToElement();
+        return this;
     }
 
     public ProductsPage clickBackButton(){
