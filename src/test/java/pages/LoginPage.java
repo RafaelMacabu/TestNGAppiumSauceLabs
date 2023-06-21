@@ -33,7 +33,7 @@ public class LoginPage extends BasePage {
     }
 
     public String getErrorText(){
-        return getText(driver.findElement(errorMessage));
+        return getText(getDriver().findElement(errorMessage));
     }
 
     public ProductsPage login(String username,String password){

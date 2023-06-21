@@ -17,7 +17,7 @@ public class ProductTests extends BasePage {
                 login("standard_user","secret_sauce");
 
         softAssert.assertEquals(productsPage.getSLBTitle(),"Sauce Labs Backpack");
-        softAssert.assertEquals(productsPage.getSLBPrice(),"$29.995");
+        softAssert.assertEquals(productsPage.getSLBPrice(),"$29.99");
 
         softAssert.assertAll();
 

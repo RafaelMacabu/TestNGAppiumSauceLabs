@@ -9,8 +9,6 @@
         <parameter name="udid" value="291d97f2"/>
         <classes>
             <class name="tests.ProductTests"/>
-
         </classes>
-
     </test>
 </suite>

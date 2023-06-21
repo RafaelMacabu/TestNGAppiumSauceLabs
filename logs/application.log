@@ -1,0 +1,6 @@
+[INFO ] 2023-06-19 00:49:45.667 BasePage:83 - This is a info message
+[ERROR] 2023-06-19 00:49:45.671 BasePage:84 - This is a error message
+[WARN ] 2023-06-19 00:49:45.671 BasePage:85 - This is a warn message
+[INFO ] 2023-06-19 00:50:16.607 BasePage:83 - This is a info message
+[ERROR] 2023-06-19 00:50:16.608 BasePage:84 - This is a error message
+[WARN ] 2023-06-19 00:50:16.608 BasePage:85 - This is a warn message
