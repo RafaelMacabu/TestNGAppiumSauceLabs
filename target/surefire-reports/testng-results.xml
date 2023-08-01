@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-08-01T10:25:28 GMT-03:00" name="Suite1" finished-at="2023-08-01T10:26:32 GMT-03:00" duration-ms="63746">
+    <groups>
+    </groups>
+    <test started-at="2023-08-01T10:25:28 GMT-03:00" name="Android" finished-at="2023-08-01T10:26:32 GMT-03:00" duration-ms="63746">
+      <class name="tests.ProductTests">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:tests.ProductTests@2a79d4b1]" started-at="2023-08-01T10:23:27 GMT-03:00" name="beforeSuite" finished-at="2023-08-01T10:25:28 GMT-03:00" duration-ms="121663" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:tests.ProductTests@2a79d4b1]" started-at="2023-08-01T10:25:28 GMT-03:00" name="beforeMethod" finished-at="2023-08-01T10:25:50 GMT-03:00" duration-ms="21767" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[android]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[291d97f2]]>
+              </value>
+            </param>
+            <param index="2">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="validateProductOnProductDetailsPage()[pri:0, instance:tests.ProductTests@2a79d4b1]" started-at="2023-08-01T10:25:50 GMT-03:00" name="validateProductOnProductDetailsPage" finished-at="2023-08-01T10:26:06 GMT-03:00" duration-ms="15806" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateProductOnProductDetailsPage -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:tests.ProductTests@2a79d4b1]" started-at="2023-08-01T10:26:06 GMT-03:00" name="afterMethod" finished-at="2023-08-01T10:26:07 GMT-03:00" duration-ms="1015" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:tests.ProductTests@2a79d4b1]" started-at="2023-08-01T10:26:07 GMT-03:00" name="beforeMethod" finished-at="2023-08-01T10:26:21 GMT-03:00" duration-ms="14294" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[android]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[291d97f2]]>
+              </value>
+            </param>
+            <param index="2">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="validateProductOnProductsPage()[pri:0, instance:tests.ProductTests@2a79d4b1]" started-at="2023-08-01T10:26:21 GMT-03:00" name="validateProductOnProductsPage" finished-at="2023-08-01T10:26:31 GMT-03:00" duration-ms="9855" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateProductOnProductsPage -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:tests.ProductTests@2a79d4b1]" started-at="2023-08-01T10:26:31 GMT-03:00" name="afterMethod" finished-at="2023-08-01T10:26:32 GMT-03:00" duration-ms="919" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:tests.ProductTests@2a79d4b1]" started-at="2023-08-01T10:26:32 GMT-03:00" name="afterSuite" finished-at="2023-08-01T10:26:32 GMT-03:00" duration-ms="52" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuite -->
+      </class> <!-- tests.ProductTests -->
+    </test> <!-- Android -->
+  </suite> <!-- Suite1 -->
+</testng-results>

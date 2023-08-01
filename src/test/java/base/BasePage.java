@@ -1,5 +1,4 @@
 package base;
-
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.InteractsWithApps;
@@ -85,7 +84,7 @@ public class BasePage {
                         .usingPort(4723)
                         .withArgument(GeneralServerFlag.SESSION_OVERRIDE)
                         .withLogFile(new File("ServerLogs\\server.log"))
-                        .withTimeout(Duration.ofSeconds(60))
+                        .withTimeout(Duration.ofSeconds(600))
         );
     }
 
